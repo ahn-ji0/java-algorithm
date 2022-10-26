@@ -20,6 +20,7 @@ public class HashTable {
         this.hash[hashVal] = value;
         System.out.printf("%s: %d방에 저장되었습니다.\n",str,hashVal);
     }
+
     public int hash(String str){
         int asciisum = 0;
         for(int i=0;i<str.length();i++){
