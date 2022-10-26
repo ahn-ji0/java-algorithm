@@ -7,9 +7,9 @@ import java.util.List;
 public class HashTable2 {
     class Node{
         private String key;
-        private Integer value;
+        private int value;
 
-        public Node(String key, Integer value) {
+        public Node(String key, int value) {
             this.key = key;
             this.value = value;
         }
@@ -18,44 +18,38 @@ public class HashTable2 {
             return key;
         }
 
-        public Integer getValue() {
+        public int getValue() {
             return value;
         }
     }
+    private List<Node>[] table = new ArrayList[1000];
 
-    private int size = 200;
-    List<Node>[] table = new ArrayList[size];
-
-    public HashTable2() {
+    public int hash(String key){
+        int count = 0;
+        for(int i=0; i<key.length(); i++){
+            count += key.charAt(i);
+        }
+        return count;
     }
 
-    public HashTable2(int size) {
-        this.table = new ArrayList[size];
+    public void insert(String key, int value){
+        int hashIndex = hash(key);
+        if(this.table[hashIndex] == null){
+            this.table[hashIndex] = new ArrayList<>();
+        }
+        this.table[hashIndex].add(new Node(key,value));
     }
 
     public Integer search(String key){
-        List<Node> nodes = this.table[hash(key)];
-        for(Node node : nodes){
-            if(key.equals(node.getKey()))
-                return node.value;
+        int hashIndex = hash(key);
 
+        List<Node> nodeList = this.table[hashIndex];
+        for(Node node : nodeList){
+            if(key == node.getKey()){
+                return node.getValue();
+            }
         }
         return null;
-    }
-    public void insert(String key, int value){
-        int hashIdx = hash(key);
-        if(this.table[hashIdx] == null){
-            this.table[hashIdx] = new ArrayList<>();
-        }
-        this.table[hashIdx].add(new Node(key,value));
-    }
-
-    public int hash(String str){
-        int asciisum = 0;
-        for(int i=0;i<str.length();i++){
-            asciisum += str.charAt(i);
-        }
-        return asciisum % this.size;
     }
     public static void main(String[] args) {
 
