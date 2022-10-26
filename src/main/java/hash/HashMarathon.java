@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
+// 시간 초과
 public class HashMarathon {
     public String solution(String[] participant, String[] completion) {
         String answer = "";
