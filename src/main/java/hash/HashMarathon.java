@@ -9,12 +9,15 @@ public class HashMarathon {
         Map<String, Integer> hashMap = new HashMap<>();
 
         for(String p : participant){
-            if(!hashMap.containsKey(p)){
-                hashMap.put(p,1);
-            }
-            else {
-                hashMap.put(p, hashMap.get(p) + 1);
-            }
+//            if(!hashMap.containsKey(p)){
+//                hashMap.put(p,1);
+//            }
+//            else {
+//                hashMap.put(p, hashMap.get(p) + 1);
+//            }
+
+            hashMap.put(p,hashMap.getOrDefault(p,0)+1);
+
         }
         for(String c : completion){
             if(hashMap.get(c) == 1){
