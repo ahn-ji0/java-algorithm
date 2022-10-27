@@ -6,7 +6,6 @@ import java.util.*;
 public class HashMarathon {
     public String solution(String[] participant, String[] completion) {
         String answer = "";
-        Set<String> hashSet = new HashSet<>();
         Map<String, Integer> hashMap = new HashMap<>();
 
         for(String p : participant){
