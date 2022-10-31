@@ -1,7 +1,30 @@
 package bruteforce;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 //https://school.programmers.co.kr/learn/courses/30/lessons/42840
 public class MockTest {
+    public int[] maxIndex(int[] count){
+        List<Integer> list = new ArrayList<>();
+        int maxVal = 0;
+        for(int i = 0; i< count.length;i++){
+            if(count[i]> maxVal){
+                maxVal = count[i];
+                list.clear();
+                list.add(i+1);
+            }
+            else if(count[i] == maxVal){
+                list.add(i+1);
+            }
+        }
+        int[] arr1 = new int[list.size()];
+        for(int i=0; i< list.size();i++ ){
+            arr1[i] = list.get(i).intValue();
+        }
+        return arr1;
+    }
     public int[] solution(int[] answers) {
         int[] student1 = new int[]{1, 2, 3, 4, 5};
         int[] student2 = new int[]{2,1,2,3,2,4,2,5};
@@ -25,12 +48,13 @@ public class MockTest {
             if(j >= student2.length) j = 0;
             if(k >= student3.length) k = 0;
         }
-        return answer;
+        return maxIndex(count);
+
     }
 
     public static void main(String[] args) {
         MockTest mockTest = new MockTest();
-        int[] result = mockTest.solution(new int[]{1,2,3,4,5});
-        System.out.println(result);
+        int[] result = mockTest.solution(new int[]{1,3,2,4,2});
+        System.out.println(Arrays.toString(result));
     }
 }
