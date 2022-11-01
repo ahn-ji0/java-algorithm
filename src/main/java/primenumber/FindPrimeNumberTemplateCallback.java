@@ -1,10 +1,12 @@
 package primenumber;
 
+import primenumber.range.HalfNRange;
+import primenumber.range.NRange;
 import primenumber.range.Range;
 import primenumber.range.RootNRange;
 
 //프로그래머스 소수찾기(level1) https://school.programmers.co.kr/learn/courses/30/lessons/12921
-// 3. 루트 n 이하의 수들로 나누어 보기
+// template callback 적용하여 1.n미만 2.n/2이하 3.루트 n이하 세가지 방법 적용
 public class FindPrimeNumberTemplateCallback {
     private Range range;
 
@@ -34,8 +36,14 @@ public class FindPrimeNumberTemplateCallback {
     }
 
     public static void main(String[] args) {
-        Range range = new RootNRange();
-        FindPrimeNumberTemplateCallback findPrimeNumber = new FindPrimeNumberTemplateCallback(range);
-        System.out.println(findPrimeNumber.solution(10));
+        Range range = new NRange();
+        FindPrimeNumberTemplateCallback findPrimeNumber1 = new FindPrimeNumberTemplateCallback(range);
+        System.out.println(findPrimeNumber1.solution(10));
+        range = new HalfNRange();
+        FindPrimeNumberTemplateCallback findPrimeNumber2 = new FindPrimeNumberTemplateCallback(range);
+        System.out.println(findPrimeNumber2.solution(10));
+        range = new RootNRange();
+        FindPrimeNumberTemplateCallback findPrimeNumber3 = new FindPrimeNumberTemplateCallback(range);
+        System.out.println(findPrimeNumber3.solution(10));
     }
 }
