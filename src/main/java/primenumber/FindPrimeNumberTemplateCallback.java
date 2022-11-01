@@ -20,7 +20,7 @@ public class FindPrimeNumberTemplateCallback {
         if(num == 2 || num ==3)
             return 1;
 
-        for(int i=2; i <= range.getRange(num); i++){
+        for(int i=2; range.compare(i,num); i++){
             if(num % i == 0){
                 return 0;
             }
