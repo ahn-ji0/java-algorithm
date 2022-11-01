@@ -1,5 +1,5 @@
 package primenumber.range;
 
 public interface Range {
-    public int getRange(int N);
+    public boolean compare(int i, int N);
 }

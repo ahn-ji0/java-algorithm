@@ -2,7 +2,7 @@ package primenumber.range;
 
 public class NRange implements Range{
     @Override
-    public int getRange(int N) {
-        return N-1;
+    public boolean compare(int i, int N) {
+        return i < N;
     }
 }

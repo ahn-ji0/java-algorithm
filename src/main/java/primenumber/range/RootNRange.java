@@ -2,7 +2,7 @@ package primenumber.range;
 
 public class RootNRange implements Range{
     @Override
-    public int getRange(int N) {
-        return (int) Math.sqrt(N);
+    public boolean compare(int i, int N) {
+        return i * i <= N;
     }
 }

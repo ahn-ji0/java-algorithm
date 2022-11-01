@@ -2,7 +2,7 @@ package primenumber.range;
 
 public class HalfNRange implements Range{
     @Override
-    public int getRange(int N) {
-        return (int) N/2;
+    public boolean compare(int i, int N) {
+        return i <= N/2;
     }
 }
