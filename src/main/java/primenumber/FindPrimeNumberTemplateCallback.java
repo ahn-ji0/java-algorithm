@@ -36,5 +36,17 @@ public class FindPrimeNumberTemplateCallback {
         System.out.println(findPrimeNumber1.solution(10,new HalfNRange()));
         System.out.println(findPrimeNumber1.solution(10,new RootNRange()));
 
+        //익명 클래스 적용
+        System.out.println(findPrimeNumber1.solution(10, new Range() {
+            @Override
+            public boolean compare(int i, int N) {
+                return i < N;
+            }
+        }));
+
+        //람다식 적용
+        System.out.println(findPrimeNumber1.solution(10,(a,b)-> a < b));
+        System.out.println(findPrimeNumber1.solution(10,(a,b)-> a <= b/2));
+        System.out.println(findPrimeNumber1.solution(10,(a,b)-> a * a <= b));
     }
 }
