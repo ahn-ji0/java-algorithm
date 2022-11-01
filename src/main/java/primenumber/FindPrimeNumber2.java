@@ -9,7 +9,7 @@ public class FindPrimeNumber2 {
         if(num == 2 || num ==3)
             return 1;
 
-        for(int i=2; i <= (int)num/2; i++){
+        for(int i=2; i <= (int)Math.sqrt(num); i++){
             if(num % i == 0){
                 return 0;
             }
@@ -26,6 +26,6 @@ public class FindPrimeNumber2 {
 
     public static void main(String[] args) {
         FindPrimeNumber2 findPrimeNumber2 = new FindPrimeNumber2();
-        System.out.println(findPrimeNumber2.solution(5));
+        System.out.println(findPrimeNumber2.solution(10));
     }
 }
