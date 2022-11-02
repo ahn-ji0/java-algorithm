@@ -3,14 +3,13 @@ package primenumber;
 public class EratosPrimeNumber {
     public int solution(int n) {
         int answer = 0;
-        Boolean[] isPrime = new Boolean[n+1];
+        boolean[] isComposit = new boolean[n+1];
 
         for(int i=2; i <= n; i++){
-            if(isPrime[i]==null){
-                isPrime[i]=true;
+            if(isComposit[i]==false){
                 answer ++;
                 for(int j = 2; j <= (int)n / i ; j++){
-                    isPrime[j*i]=false;
+                    isComposit[j*i]=true;
                 }
             }
         }
