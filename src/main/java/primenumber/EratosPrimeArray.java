@@ -9,13 +9,15 @@ public class EratosPrimeArray {
         boolean[] isPrime = new boolean[n+1];
         int count = 0;
         Arrays.fill(isPrime,true);
-        for(int i=2; i< n+1; i++){
+        for(int i=2; i * i <= n; i++){
             if(isPrime[i]==true){
-                count++;
                 for(int j=2; j<= n/i ; j++){
                     isPrime[i*j] = false;
                 }
             }
+        }
+        for(int i=2; i <= n; i++){
+            if(isPrime[i]==true) count++;
         }
         return count;
     }
