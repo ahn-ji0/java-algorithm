@@ -1,15 +1,14 @@
 package primenumber;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class EratosPrimeArray {
     public int solution(int n) {
         boolean[] isPrime = new boolean[n+1];
         int count = 0;
-        for(int i=2; i< n+1; i++){
-            isPrime[i]=true;
-        }
+        Arrays.fill(isPrime,true);
         for(int i=2; i< n+1; i++){
             if(isPrime[i]==true){
                 count++;
