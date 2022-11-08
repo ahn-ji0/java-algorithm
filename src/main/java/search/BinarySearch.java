@@ -8,8 +8,11 @@ public class BinarySearch {
         int lastIdx = nums.length - 1;
         int midIdx = (int) lastIdx / 2;
 
-        while(true){
+        int targetIdx = -1;
+
+        while(firstIdx <= lastIdx){
             if(targetNum == nums[midIdx]){
+                targetIdx = midIdx;
                 break;
             }
             else if(targetNum < nums[midIdx]){
@@ -20,11 +23,11 @@ public class BinarySearch {
             }
             midIdx = (int) (firstIdx + lastIdx) / 2 ;
         }
-        return midIdx;
+        return targetIdx;
     }
     public static void main(String[] args) {
         int[] nums = new int[]{1,2,3,4,5,6,7,8,9,10,11};
-        int targetNum = 7;
+        int targetNum = 15;
 
         BinarySearch binarySearch = new BinarySearch();
         System.out.println(binarySearch.solution(nums,targetNum));
