@@ -6,11 +6,12 @@ public class BinarySearch {
     public int solution(int[] nums, int targetNum){
         int firstIdx = 0;
         int lastIdx = nums.length - 1;
-        int midIdx = (int) lastIdx / 2;
+        int midIdx;
 
         int targetIdx = -1;
 
         while(firstIdx <= lastIdx){
+            midIdx = (firstIdx + lastIdx) / 2 ;
             if(targetNum == nums[midIdx]){
                 targetIdx = midIdx;
                 break;
@@ -21,7 +22,6 @@ public class BinarySearch {
             else{
                 firstIdx = midIdx + 1;
             }
-            midIdx = (int) (firstIdx + lastIdx) / 2 ;
         }
         return targetIdx;
     }
