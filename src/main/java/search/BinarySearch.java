@@ -3,10 +3,7 @@ package search;
 import java.util.Scanner;
 
 public class BinarySearch {
-    public static void main(String[] args) {
-        int[] nums = new int[]{1,2,3,4,5,6,7,8,9,10,11};
-        int targetNum = 7;
-
+    public int solution(int[] nums, int targetNum){
         int firstIdx = 0;
         int lastIdx = nums.length - 1;
         int midIdx = (int) lastIdx / 2;
@@ -23,6 +20,14 @@ public class BinarySearch {
             }
             midIdx = (int) (firstIdx + lastIdx) / 2 ;
         }
-        System.out.println(midIdx);
+        return midIdx;
+    }
+    public static void main(String[] args) {
+        int[] nums = new int[]{1,2,3,4,5,6,7,8,9,10,11};
+        int targetNum = 7;
+
+        BinarySearch binarySearch = new BinarySearch();
+        System.out.println(binarySearch.solution(nums,targetNum));
+
     }
 }
