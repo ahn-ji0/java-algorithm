@@ -14,17 +14,14 @@ public class DataSearch {
 
         int k = sc.nextInt();
 
-        int idx = 0;
-        boolean found = false;
 
-        while(!found && idx < n){
+        for(int idx = 0 ; idx < n ; idx ++){
             if(arr[idx]==k){
-                found = true;
+                System.out.println(idx+1);
+                return;
             }
-            idx ++;
         }
-        if(found) System.out.println(idx);
-        else System.out.println(-1);
+        System.out.println(-1);
 
     }
 }
