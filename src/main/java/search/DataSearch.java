@@ -17,7 +17,7 @@ public class DataSearch {
         int idx = 0;
         boolean found = false;
 
-        while(!found){
+        while(!found && idx < n){
             if(arr[idx]==k){
                 found = true;
             }
