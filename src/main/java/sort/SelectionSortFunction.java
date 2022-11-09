@@ -5,13 +5,8 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 
 public class SelectionSortFunction {
-    private BiFunction<Integer,Integer,Boolean> compare;
 
-    public SelectionSortFunction(BiFunction<Integer, Integer, Boolean> compare) {
-        this.compare = compare;
-    }
-
-    public int[] solution(int[] arr){
+    public int[] solution(int[] arr, BiFunction<Integer,Integer,Boolean> compare){
         for (int i = 0; i < arr.length; i++) {
             int val = arr[i];
             int valIdx = i;
@@ -32,12 +27,11 @@ public class SelectionSortFunction {
         BiFunction<Integer,Integer,Boolean> descendSort = (a, b) -> a > b;
         int[] test = new int[] {7,4,2,10,9,223,111,23,3,39};
 
-        SelectionSortFunction sort = new SelectionSortFunction(ascendSort);
-        int[] arr = sort.solution(test);
+        SelectionSortFunction sort = new SelectionSortFunction();
+        int[] arr = sort.solution(test,ascendSort);
         System.out.println(Arrays.toString(arr));
 
-        sort = new SelectionSortFunction(descendSort);
-        arr = sort.solution(test);
+        arr = sort.solution(test,descendSort);
         System.out.println(Arrays.toString(arr));
     }
 }
