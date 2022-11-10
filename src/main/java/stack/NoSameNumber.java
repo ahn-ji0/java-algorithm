@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+//코드업 같은 숫자는 싫어 https://school.programmers.co.kr/learn/courses/30/lessons/12906
 public class NoSameNumber {
     public int[] solution(int[] arr){
         List<Integer> array = new ArrayList<>();
