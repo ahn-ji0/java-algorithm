@@ -10,7 +10,7 @@ public class BinaryNumber {
     public String solution(int num) {
         String binaryNum = "";
         while(num >= 1){
-            binaryNum += num % 2;
+            binaryNum = num % 2 + binaryNum;
             num = num / 2;
         }
 
