@@ -11,10 +11,8 @@ public class SecretMap {
         }
 
         for (int i = 0; i < n; i++) {
-            answer[i]=Integer.toBinaryString(arr1[i]|arr2[i]);
+            answer[i]=Integer.toBinaryString(arr1[i]|arr2[i]).replace("1","#").replace("0"," ");
             answer[i] = "0".repeat(n-answer[i].length())+answer[i];
-            answer[i]=answer[i].replace("1","#");
-            answer[i]=answer[i].replace("0"," ");
         }
         return answer;
     }
