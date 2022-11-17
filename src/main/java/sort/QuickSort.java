@@ -4,8 +4,7 @@ import java.util.Arrays;
 
 public class QuickSort {
     public int[] solution(int[] arr, int start, int end){
-        int pivot;
-        pivot = arr[arr.length /2];
+        int pivot = arr[(start+end) /2];
         int leftIdx = start;
         int rightIdx = end;
         while(leftIdx <= rightIdx) {
@@ -20,6 +19,9 @@ public class QuickSort {
                 rightIdx--;
             }
         }
+        if(start < rightIdx) solution(arr,start,rightIdx);
+        if(leftIdx < end) solution(arr,leftIdx,end);
+
         return arr;
     }
 
