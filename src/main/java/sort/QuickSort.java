@@ -12,11 +12,13 @@ public class QuickSort {
             while (pivot > arr[leftIdx]) leftIdx++;
             while (pivot < arr[rightIdx]) rightIdx--;
 
-            int temp = arr[leftIdx];
-            arr[leftIdx] = arr[rightIdx];
-            arr[rightIdx] = temp;
-            leftIdx++;
-            rightIdx--;
+            if(leftIdx<=rightIdx) {
+                int temp = arr[leftIdx];
+                arr[leftIdx] = arr[rightIdx];
+                arr[rightIdx] = temp;
+                leftIdx++;
+                rightIdx--;
+            }
         }
         return arr;
     }
