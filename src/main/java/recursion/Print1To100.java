@@ -5,6 +5,7 @@ public class Print1To100 {
         if(n>100) return;
 
         System.out.println(n);
+        System.out.println("*".repeat(n));
         print(n+1);
     }
 
