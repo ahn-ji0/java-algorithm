@@ -9,7 +9,6 @@ public class Print1To100 {
     }
 
     public static void main(String[] args) {
-        Print1To100 print1To100 = new Print1To100();
-        print1To100.print(1);
+        print(1);
     }
 }
