@@ -4,7 +4,7 @@ import java.util.Scanner;
 //without recursion
 public class Fibonacci2 {
     public static int fibonacci(int n){
-        int curr ;
+        int curr = 0;
         int n2 = 0;
         int n1 = 1;
         if(n == 1) return 1;
@@ -16,7 +16,6 @@ public class Fibonacci2 {
         }
         return curr;
     }
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
