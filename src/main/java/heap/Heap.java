@@ -6,21 +6,23 @@ public class Heap {
     public static int[] solution(int[] arr){
         int depth = (arr.length-1 -1) / 2;
         for (int i = depth; i >= 0; i--) {
-            if(arr[2*i + 1] > arr[i]){
-                int tmp = arr[i];
-                arr[i] = arr[2*i + 1];
-                arr[2*i + 1] = tmp;
+            int leftIdx = 2 * i + 1;
+            int rightIdx = 2 * i + 2;
+            int greatIdx = i;
+            if(leftIdx < arr.length && arr[leftIdx] > arr[greatIdx]){
+                greatIdx = leftIdx;
             }
-            if (arr[2*i + 2] > arr[i]){
-                    int tmp = arr[i];
-                    arr[i] = arr[2*i+2];
-                    arr[2*i+2] = tmp;
-                }
+            if (rightIdx < arr.length && arr[rightIdx] > arr[greatIdx]){
+                    greatIdx = rightIdx;
             }
+            int tmp = arr[greatIdx];
+            arr[greatIdx] = arr[i];
+            arr[i] = tmp;
+        }
         return arr;
     }
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(solution(new int[] {6,5,7,8,9})));
+        System.out.println(Arrays.toString(solution(new int[] {6,5,7,8})));
     }
 }
