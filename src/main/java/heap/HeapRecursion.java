@@ -17,7 +17,7 @@ public class HeapRecursion {
             int tmp = arr[greatIdx];
             arr[greatIdx] = arr[i];
             arr[i] = tmp;
-            solution(arr,i);
+            solution(arr,greatIdx);
         }
 
         return arr;
