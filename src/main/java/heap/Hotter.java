@@ -10,8 +10,11 @@ public class Hotter {
             priorityQueue.add(value);
         }
         while(priorityQueue.peek() < K) {
-            int first = priorityQueue.poll();
-            int second = priorityQueue.poll();
+            Integer first = priorityQueue.poll();
+            Integer second = priorityQueue.poll();
+            if(first == null || second == null){
+                return -1;
+            }
             int tmp = first + second * 2;
             priorityQueue.add(tmp);
             count ++;
