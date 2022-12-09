@@ -21,8 +21,9 @@ public class LCS {
         }
         for (int i = 0; i < dp.length; i++) {
             System.out.println(Arrays.toString(dp[i]));
-
         }
+        int answer = dp[str2.length()][str1.length()];
+        System.out.println(answer);
 
     }
 }
