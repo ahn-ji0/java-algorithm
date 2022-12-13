@@ -9,12 +9,17 @@ public class OptimalStrategy {
             this.left = left;
             this.right = right;
         }
+
     }
     public Pair solution(int[] arr){
         Pair[][] dp = new Pair[arr.length][arr.length];
 
         for (int i = 0; i < arr.length; i++) {
             dp[i][i] = new Pair(arr[i],0);
+        }
+
+        for (int i = 1; i < arr.length; i++) {
+            dp[i-1][i] = new Pair(Math.max(arr[i-1],arr[i]),Math.min(arr[i-1],arr[i]));
         }
         return new Pair(0,0);
     }
