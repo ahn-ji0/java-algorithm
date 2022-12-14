@@ -27,10 +27,7 @@ public class OptimalStrategy {
             dp[i][i] = new Pair(arr[i],0);
         }
 
-        for (int i = 1; i < arr.length; i++) {
-            dp[i-1][i] = new Pair(Math.max(arr[i-1],arr[i]),Math.min(arr[i-1],arr[i]));
-        }
-        for (int k = 2; k < arr.length; k++) {
+        for (int k = 1; k < arr.length; k++) {
             for (int i = 0; k + i < arr.length; i++) {
                 int j = i + k;
                 int sum = dp[i][j - 1].sum() + arr[j];
