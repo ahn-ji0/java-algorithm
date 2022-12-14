@@ -12,10 +12,7 @@ public class OptimalStrategy {
 
         @Override
         public String toString() {
-            return "Pair{" +
-                    "left=" + left +
-                    ", right=" + right +
-                    '}';
+            return "("+this.left+","+this.right+")";
         }
 
         public int sum(){
@@ -44,8 +41,9 @@ public class OptimalStrategy {
         }
         for (int i = 0; i < arr.length; i++) {
             for (int j = i; j < arr.length; j++) {
-                System.out.println(dp[i][j]);
+                System.out.print(dp[i][j]);
             }
+            System.out.println();
         }
     }
     public static void main(String[] args) {
